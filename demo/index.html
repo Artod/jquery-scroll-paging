@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JQuery ScrollPaging Demo</title>
+		<meta charset="utf-8" />
+
+		<script src="http://code.jquery.com/jquery-git.js"></script>
+		<script src="../jquery.scroll-paging.js"></script>
+
+		<script>//<!--
+			$(function() {
+				var multiplyText = function(text, sum) {for(var out='', i=0; i < sum; i++){out += i + '. ' + text}; return out;};				
+				
+				$('#scrollable').append(multiplyText('Page #0<br />', 20));
+				
+				$.scrollPaging({
+					$viewport: $('#viewport'),
+					$scrollable: $('#scrollable'),
+					additive: 100,
+					getPage: function(scrollPaging) {
+						scrollPaging.opts.$scrollable.append( multiplyText('Page #' + scrollPaging.page + '<br />', 20) );
+						
+						scrollPaging.page++;
+					}
+				});
+			});
+		//--></script>
+	</head>
+	<body>
+		<div id="viewport" style="height:250px; width:200px; overflow: auto;">
+			<div id="scrollable" style="overflow: auto;"></div>
+		</div>
+	</body>
+</html>
