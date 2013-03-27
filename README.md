@@ -4,6 +4,11 @@ jQuery ScrollPaging
 Pagination with scroll.
 Copyright (c) 2013 Artod - gartod@gmail.com
 
+Demo
+----------
+
+http://artod.ru/jquery-scroll-paging/demo/
+
 How to use
 ----------
 
